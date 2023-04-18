@@ -83,3 +83,60 @@ function returnYoungestAge(arr) {
 }
 
 console.log(returnYoungestAge(animals))
+
+// write a function that takes an array of nested arrays, where each nested array consistes of a users name and an amail, and returns an array of objects where each object has an id that corresponds to the index of the array plus 1, a name property with the user's name, and an email property containing the user's email.
+// ex: const exampleArray = [['alex', 'alex@example.com'], ['tom', 'tom@example.com']] ==> [{name: 'alex', email: 'alex@example.com', id: 1}, { name: 'tom', email: 'tom@example.com', id: 2}] etc
+
+const exampleArray = [['alex', 'alex@example.com'], ['tom', 'tom@example.com']]
+
+function mapUser(arr) {
+  const userArrayWithId = arr.map((userArray, index) => {
+    return {name: userArray[0], email: userArray[1], id: index+1 }
+ })
+  return userArrayWithId
+} 
+
+//console.log(mapUser(exampleArray))
+
+// write a function that returns an object that counts the occurences of each letter in a string.  ignore any whitespaces and cases (have property be lower case).  Use reduce.
+// ex: 'abbab' => {a:2, b: 3}
+// ex: 'AbbaB' => {a:2, b: 3}
+// ex: 'A big boat' => {a: 2, b: 2, i: 1, o: 1, g: 1} etc
+
+function countOccurences(str) {
+  const strJoin = str.split(' ').join('')
+  console.log(strJoin)
+  const strSplit = strJoin.toLowerCase().split('');
+  console.log(strSplit)
+  const strReduce = strSplit.reduce((totalLetterObj, currentLetter) => {
+  console.log('Acc:' ,totalLetterObj, 'Cur:', currentLetter)
+    if (totalLetterObj[currentLetter]) {
+      totalLetterObj[currentLetter] = totalLetterObj[currentLetter] + 1
+    } else {
+      totalLetterObj[currentLetter] = 1
+    }  
+    console.log(currentLetter)
+    return totalLetterObj
+  }, {})
+  return strReduce
+} 
+
+//console.log(countOccurences("A big boat"))
+
+// write a function that takes an array of strings and returns the longest string.  use reduce.  
+// ex: ['some', 'strings', 'longstring'] => 'longstring'
+
+const exArray = ['thisisthelongeststring','some', 'strings', 'thisisactuallythelongeststring', 'longstring']
+
+function longestStr(arr) {
+  const longest = arr.reduce((aStr, bStr) => {
+    if (aStr.length > bStr.length) {
+      return aStr
+    } else {
+    return bStr
+    }
+  })
+  return longest
+}
+
+console.log(longestStr(exArray))
