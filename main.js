@@ -140,3 +140,20 @@ function longestStr(arr) {
 }
 
 console.log(longestStr(exArray))
+
+/* ************************ */
+
+function animalCount(obj) {
+    const arrayize = obj.split(' ')
+    const countUp = arrayize.reduce((totalAnimalObj, currentAnimal) => {
+      if (totalAnimalObj[currentAnimal]) {
+        totalAnimalObj[currentAnimal] = totalAnimalObj[currentAnimal] + 1;
+      } else {
+        totalAnimalObj[currentAnimal] = 1
+      }
+      return totalAnimalObj
+    }, {})
+    return countUp
+  }
+  
+  console.log(animalCount(exampleAnimalObj))
