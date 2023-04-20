@@ -144,7 +144,7 @@ console.log(longestStr(exArray))
 /* ************************ */
 
 function animalCount(obj) {
-    const arrayize = obj.split(' ')
+    const arrayize = Object.values(obj)
     const countUp = arrayize.reduce((totalAnimalObj, currentAnimal) => {
       if (totalAnimalObj[currentAnimal]) {
         totalAnimalObj[currentAnimal] = totalAnimalObj[currentAnimal] + 1;
