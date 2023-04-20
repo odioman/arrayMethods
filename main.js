@@ -142,6 +142,18 @@ function longestStr(arr) {
 console.log(longestStr(exArray))
 
 /* ************************ */
+const exampleAnimalObj = {
+    cat: 'mammal',
+    snake: 'reptile',
+    dog: 'mammal',
+    parrot: 'bird',
+    bear: 'mammal',
+    gecko: 'reptile',
+    chameleon: 'reptile', 
+    tiger: 'mammal',
+    shark: 'fish',
+    ostrich: 'bird',
+  }
 
 function animalCount(obj) {
     const arrayize = Object.values(obj)
